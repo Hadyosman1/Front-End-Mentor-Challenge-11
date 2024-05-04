@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply px-4 mx-auto max-w-[1300px];
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  @apply bg-Cyan
+}
+
+@layer {
+  body {
+    @apply bg-introColor font-Raleway;
+  }
+
+  .my-li {
+    @apply transition-all font-thin cursor-pointer text-sm md:text-xl;
+    white-space: nowrap;
+    &:hover {
+      @apply font-bold;
+      border-bottom: 2px solid currentColor !important;
+    }
+  }
+
+  .hero {
+    @apply bg-[url("./images/bg-curvy-mobile.svg")];
+    @apply md:bg-[url("./images/bg-curvy-desktop.svg")];
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% 48%;
+  }
+
+  section.email {
+    background-image: linear-gradient(
+      hsl(218, 28%, 13%) 50%,
+      hsl(216, 53%, 9%) 50%
+    );
+  }
+
+  #link {
+    @apply text-Cyan;
+    border-bottom: 1.5px solid cyan !important;
+
+    &:hover {
+      @apply text-White;
+      border-bottom: 1.5px solid white !important;
+    }
+  }
+
+  #link:hover span img {
+    transition-duration: 0.5s !important;
+    animation: ani3 0.4s linear infinite alternate both;
+    rotate: 360deg;
+  }
+
+  #imgForAnimation {
+    animation: ani1 0.7s linear infinite alternate both;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  #imgForAnimation2 {
+    animation: ani2 1.4s linear infinite alternate both;
+  }
+
+  .scale-ani:hover {
+    transition: all 0.3s ease-in;
+    scale: 1.04;
+    transform: translateY(-10px);
+  }
+
+  .translate-ani {
+    transition: all 0.3s ease-in;
+    animation: ani3 1.4s linear infinite alternate both;
+
+    &:hover {
+      translate: 0 -20px;
+    }
+  }
+
+  .shadow-hover:hover {
+    transition: all 0.4s;
+    box-shadow: 0 0 20px #ffffff8f;
+  }
+
+  @keyframes ani1 {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(18px);
+    }
+  }
+
+  @keyframes ani2 {
+    from {
+      transform: scale(1);
+      translate: 0px;
+    }
+    to {
+      transform: scale(1.02);
+      translate: 0 -30px;
+    }
+  }
+
+  @keyframes ani3 {
+    to {
+      transform: translatex(6px);
+    }
+  }
+
+  .Testi-card {
+    box-shadow: 0.75rem 0.75rem 10px 0.5rem #1e2331;
+  }
+
+  .footer-li {
+    @apply cursor-pointer transition-all px-2 min-w-[100px];
+
+    &:hover {
+      transition-duration: 0.5s;
+      @apply font-bold;
+      transform: translateX(-8px);
+    }
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1.7px solid white !important;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.5s linear;
+      scale: 1.04;
+      @apply text-Cyan border-Cyan !important;
+    }
+  }
+}
